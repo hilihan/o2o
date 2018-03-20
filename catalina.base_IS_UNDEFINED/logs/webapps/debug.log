@@ -1,33 +1,5 @@
-2018-03-14 09:15:56:409 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 09:15:56:438 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 09:15:56:460 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
-2018-03-14 10:31:42:228 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 10:31:42:267 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 10:31:42:295 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2018-03-14 10:31:42:307 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-03-14 10:31:42:308 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
-2018-03-14 10:31:42:311 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
-2018-03-14 10:32:28:277 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 10:32:28:315 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 10:32:28:340 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2018-03-14 10:32:28:350 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-03-14 10:32:28:351 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 37(Long)
-2018-03-14 10:32:28:352 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 0
-2018-03-14 11:13:46:588 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 11:13:46:617 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 11:13:46:635 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2018-03-14 11:13:46:646 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-03-14 11:13:46:646 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
-2018-03-14 11:13:46:649 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
-2018-03-14 11:14:41:754 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 11:14:41:783 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 11:14:41:800 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2018-03-14 11:14:41:816 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-03-14 11:14:41:817 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
-2018-03-14 11:14:41:821 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
-2018-03-14 11:15:42:328 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-03-14 11:15:42:374 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-03-14 11:15:42:399 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2018-03-14 11:15:42:411 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id=? ORDER BY priority DESC 
-2018-03-14 11:15:42:412 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
-2018-03-14 11:15:42:414 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2018-03-20 12:13:42:376 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.AreaDao.queryArea] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-03-20 12:13:42:398 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-03-20 12:13:42:436 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-03-20 12:13:42:616 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2018-03-20 12:13:42:653 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - <==      Total: 4
