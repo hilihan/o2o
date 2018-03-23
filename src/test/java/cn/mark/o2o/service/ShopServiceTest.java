@@ -18,12 +18,27 @@ import cn.mark.o2o.entity.PersonInfo;
 import cn.mark.o2o.entity.Shop;
 import cn.mark.o2o.entity.ShopCategory;
 import cn.mark.o2o.enums.ShopStateEnum;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 public class ShopServiceTest extends BaseTest {
 	@Autowired
 	private ShopService shopService;
 	
 	@Test
+	public void testModifyShop() throws FileNotFoundException {
+		Shop shop = new Shop();
+		shop.setShopName("味千拉面");
+		shop.setShopId(39L);
+		shop.setShopDesc("味千（中国）控股有限公司是一家以内地为主营业务基地的经营商。截至2012年底，味千中国的快速休闲连锁餐厅网络遍布中国120个主要城市的商业地段，在上海、香港、北京、深圳、广州、杭州、南京、福州、大连、成都、武汉等地区设有661家分店，2012年营业额达30.43亿港元。");
+		File shopImg = new File("/Users/mark/Desktop/1.jpg");
+		InputStream is = new FileInputStream(shopImg);
+		
+		ShopExecution shopExecution = shopService.modifyShop(shop, is, shopImg.getName());
+		System.out.println("新的图片地址为："+shopExecution.getShop().getShopImg());
+	}
+	
+	@Test
+	@Ignore
 	public void testAddShop() throws FileNotFoundException {
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();

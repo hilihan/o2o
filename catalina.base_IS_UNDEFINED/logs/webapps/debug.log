@@ -1,5 +1,17 @@
-2018-03-20 12:13:42:376 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.AreaDao.queryArea] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-20 12:13:42:398 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-20 12:13:42:436 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2018-03-20 12:13:42:616 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==> Parameters: 
-2018-03-20 12:13:42:653 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - <==      Total: 4
+2018-03-21 09:57:25:881 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryByShopId] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-03-21 09:57:25:904 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-03-21 09:57:25:930 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2018-03-21 09:57:26:038 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 39(Long)
+2018-03-21 09:57:26:068 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2018-03-21 09:57:26:076 [main] DEBUG cn.mark.o2o.util.ImageUtil - current relativeAddr is:upload/item/shop/39/2018032109572687602.jpg
+2018-03-21 09:57:26:077 [main] DEBUG cn.mark.o2o.util.ImageUtil - current complete addr is:/Users/mark/Downloads/o2o_dev_img/upload/item/shop/39/2018032109572687602.jpg
+2018-03-21 09:57:26:735 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.updateShop] use [master] Strategy,SqlCommanType [UPDATE] ..
+2018-03-21 09:57:26:736 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-03-21 09:57:26:782 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_img=?, last_edit_time=? where shop_id=? 
+2018-03-21 09:57:26:784 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - ==> Parameters: 味千拉面(String), 味千（中国）控股有限公司是一家以内地为主营业务基地的经营商。截至2012年底，味千中国的快速休闲连锁餐厅网络遍布中国120个主要城市的商业地段，在上海、香港、北京、深圳、广州、杭州、南京、福州、大连、成都、武汉等地区设有661家分店，2012年营业额达30.43亿港元。(String), upload/item/shop/39/2018032109572687602.jpg(String), 2018-03-21 09:57:26.735(Timestamp), 39(Long)
+2018-03-21 09:57:26:811 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2018-03-21 09:57:26:812 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryByShopId] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-03-21 09:57:26:812 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-03-21 09:57:26:813 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2018-03-21 09:57:26:813 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 39(Long)
+2018-03-21 09:57:26:815 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - <==      Total: 1

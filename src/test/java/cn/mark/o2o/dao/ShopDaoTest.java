@@ -12,12 +12,14 @@ import cn.mark.o2o.entity.Area;
 import cn.mark.o2o.entity.PersonInfo;
 import cn.mark.o2o.entity.Shop;
 import cn.mark.o2o.entity.ShopCategory;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 public class ShopDaoTest extends BaseTest{
 	@Autowired
 	private ShopDao shopDao;
 	
 	@Test
+	@Ignore
 	public void testInsertShop() {
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();
@@ -45,6 +47,7 @@ public class ShopDaoTest extends BaseTest{
 	}
 	
 	@Test
+	@Ignore
 	public void testUpdateShop() {
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();
@@ -70,5 +73,13 @@ public class ShopDaoTest extends BaseTest{
 		
 		int effectedNum = shopDao.updateShop(shop);
 		assertEquals(1, effectedNum);
+	}
+	
+	@Test
+	public void testQueryByShopId() {
+		long shopId = 36L;
+		Shop shop = shopDao.queryByShopId(shopId);
+		System.out.println("areaId:" + shop.getArea().getAreaId());
+		System.out.println("areaName:" + shop.getArea().getAreaName());
 	}
 }
