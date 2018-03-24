@@ -8,6 +8,15 @@ import cn.mark.o2o.exceptions.ShopOperationException;
 
 public interface ShopService {
 	/**
+	 * 根据shopCondition分页返回店铺列表
+	 * @param shopConditon
+	 * @param pageIndex
+	 * @param pageSize
+	 * @return
+	 */
+	public ShopExecution getShopList(Shop shopCondition,int pageIndex,int pageSize);
+	
+	/**
 	 * 通过店铺Id获取店铺信息
 	 * @param shopId
 	 * @return

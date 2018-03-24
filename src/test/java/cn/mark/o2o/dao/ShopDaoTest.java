@@ -3,6 +3,7 @@ package cn.mark.o2o.dao;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,10 +77,31 @@ public class ShopDaoTest extends BaseTest{
 	}
 	
 	@Test
+	@Ignore
 	public void testQueryByShopId() {
 		long shopId = 36L;
 		Shop shop = shopDao.queryByShopId(shopId);
 		System.out.println("areaId:" + shop.getArea().getAreaId());
 		System.out.println("areaName:" + shop.getArea().getAreaName());
+	}
+	
+	@Test
+	public void testQueryShopList() {
+		Shop shopCondition = new Shop();
+		PersonInfo owner = new PersonInfo();
+		owner.setUserId(9L);
+		shopCondition.setOwner(owner);
+		List<Shop> shopList = shopDao.queryShopList(shopCondition, 0, 3);
+		System.out.println("店铺列表的大小：" + shopList.size());
+		System.out.println("店铺列表的总数：" + shopDao.queryShopCount(shopCondition));
+		
+		ShopCategory sc = new ShopCategory();
+		sc.setShopCategoryId(36L);
+		shopCondition.setShopCategory(sc);
+		
+		shopList = shopDao.queryShopList(shopCondition, 0, 2);
+		System.out.println("xin店铺列表的大小：" + shopList.size());
+		System.out.println("xin店铺列表的总数：" + shopDao.queryShopCount(shopCondition));
+		
 	}
 }

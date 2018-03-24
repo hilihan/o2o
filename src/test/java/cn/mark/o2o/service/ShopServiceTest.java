@@ -25,6 +25,21 @@ public class ShopServiceTest extends BaseTest {
 	private ShopService shopService;
 	
 	@Test
+	public void testGetShopList() {
+		Shop shopCondition = new Shop();
+		PersonInfo owner = new PersonInfo();
+		owner.setUserId(9L);
+		shopCondition.setOwner(owner);
+		ShopCategory sc = new ShopCategory();
+		sc.setShopCategoryId(36L);
+		shopCondition.setShopCategory(sc);
+		ShopExecution se = shopService.getShopList(shopCondition, 2, 3);
+		System.out.println("店铺列表数为：" + se.getShopList().size());
+		System.out.println("店铺总数数为：" + se.getCount());
+	}
+	
+	@Test
+	@Ignore
 	public void testModifyShop() throws FileNotFoundException {
 		Shop shop = new Shop();
 		shop.setShopName("味千拉面");
