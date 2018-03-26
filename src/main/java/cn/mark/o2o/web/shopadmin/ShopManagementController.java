@@ -42,7 +42,7 @@ public class ShopManagementController {
 	@Autowired
 	private AreaService areaService;
 	
-	@RequestMapping(value="/getshopmnanagementinfo",method=RequestMethod.GET)
+	@RequestMapping(value="/getshopmanagementinfo",method=RequestMethod.GET)
 	@ResponseBody
 	private Map<String,Object> getShopMnanagementInfo(HttpServletRequest request){
 		Map<String,Object> modelMap = new HashMap<>();
@@ -51,7 +51,7 @@ public class ShopManagementController {
 			Object currentShopObj = request.getSession().getAttribute("currentShop");
 			if(currentShopObj == null) {
 				modelMap.put("redirect", true);
-				modelMap.put("url", "/o2o/shop/shoplist");
+				modelMap.put("url", "/o2o/shopadmin/shoplist");
 			} else {
 				Shop currentShop = (Shop)currentShopObj;
 				modelMap.put("redirect", false);
