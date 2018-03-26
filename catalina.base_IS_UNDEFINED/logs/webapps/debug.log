@@ -1,40 +1,5 @@
-2018-03-24 09:32:55:496 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:32:55:508 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:32:55:532 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2018-03-24 09:32:55:626 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 9(Long), 0(Integer), 3(Integer)
-2018-03-24 09:32:55:654 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 3
-2018-03-24 09:32:55:664 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:32:55:664 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:32:55:664 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
-2018-03-24 09:32:55:665 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 9(Long)
-2018-03-24 09:32:55:666 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2018-03-24 09:32:55:669 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:32:55:669 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:32:55:670 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2018-03-24 09:32:55:671 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 36(Long), 9(Long), 0(Integer), 2(Integer)
-2018-03-24 09:32:55:675 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2018-03-24 09:32:55:676 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:32:55:676 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:32:55:677 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
-2018-03-24 09:32:55:678 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 36(Long), 9(Long)
-2018-03-24 09:32:55:680 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2018-03-24 09:34:31:766 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:34:31:771 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:34:31:800 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2018-03-24 09:34:31:904 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 36(Long), 9(Long), 0(Integer), 3(Integer)
-2018-03-24 09:34:31:935 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 3
-2018-03-24 09:34:31:945 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:34:31:946 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:34:31:947 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
-2018-03-24 09:34:31:948 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 36(Long), 9(Long)
-2018-03-24 09:34:31:950 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2018-03-24 09:36:06:719 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:36:06:723 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:36:06:746 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2018-03-24 09:36:06:826 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 36(Long), 9(Long), 3(Integer), 3(Integer)
-2018-03-24 09:36:06:851 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 1
-2018-03-24 09:36:06:859 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-24 09:36:06:859 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-24 09:36:06:860 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
-2018-03-24 09:36:06:861 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 36(Long), 9(Long)
-2018-03-24 09:36:06:864 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-03-26 14:43:18:277 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.queryProductCategoryList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-03-26 14:43:18:286 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-03-26 14:43:18:308 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
+2018-03-26 14:43:18:402 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==> Parameters: 41(Long)
+2018-03-26 14:43:18:426 [main] DEBUG c.m.o.d.P.queryProductCategoryList - <==      Total: 8
