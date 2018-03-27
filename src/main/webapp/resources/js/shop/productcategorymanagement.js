@@ -1,6 +1,6 @@
 $(function() {
 	var listUrl = '/o2o/shopadmin/getproductcategorylist';
-	var addUrl = '/o2o/shopadmin/addproductcategorys';
+	var addUrl = '/o2o/shopadmin/addproductcategories';
 	var deleteUrl = '/o2o/shopadmin/removeproductcategory';
 	
 	getList();

@@ -1,5 +1,9 @@
-2018-03-26 14:43:18:277 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.queryProductCategoryList] use [slave] Strategy,SqlCommanType [SELECT] ..
-2018-03-26 14:43:18:286 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
-2018-03-26 14:43:18:308 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
-2018-03-26 14:43:18:402 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==> Parameters: 41(Long)
-2018-03-26 14:43:18:426 [main] DEBUG c.m.o.d.P.queryProductCategoryList - <==      Total: 8
+2018-03-27 09:31:02:165 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.batchInsertProductCategory] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-03-27 09:31:02:191 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-03-27 09:31:02:244 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category ( product_category_name, priority, create_time, shop_id ) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-03-27 09:31:02:279 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2018-03-27 09:31:02.146(Timestamp), 1(Long), 商品类别2(String), 2(Integer), 2018-03-27 09:31:02.146(Timestamp), 1(Long)
+2018-03-27 09:32:27:067 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.batchInsertProductCategory] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-03-27 09:32:27:070 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-03-27 09:32:27:118 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category ( product_category_name, priority, create_time, shop_id ) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-03-27 09:32:27:150 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2018-03-27 09:32:27.049(Timestamp), 41(Long), 商品类别2(String), 2(Integer), 2018-03-27 09:32:27.049(Timestamp), 41(Long)
+2018-03-27 09:32:27:164 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - <==    Updates: 2
