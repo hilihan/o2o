@@ -44,4 +44,20 @@ public class ProductCategoryServiceImpl implements cn.mark.o2o.service.ProductCa
 		
 	}
 
+	@Override
+	@Transactional
+	public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException{
+		//TODO 解除tb_product里的商品与该producategoryId的关联 
+		try {
+			int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
+			if(effectedNum <= 0) {
+				throw new ProductCategoryOperationException("商品类别删除失败！");
+			} else {
+				return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
+			}
+		} catch (ProductCategoryOperationException e) {
+			throw new ProductCategoryOperationException("deleteProductCategory error : " + e.getMessage());
+		}
+	}
+
 }
