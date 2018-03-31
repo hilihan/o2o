@@ -11,7 +11,7 @@ public class Product {
 	private Long productId;//主键ID
 	private String productName;//商品名
 	private String productDesc;//商品简介
-	private String imgArr;//简略图
+	private String imgAddr;//简略图
 	private String normalPrice;//原价
 	private String promotionPrice;//现价(推广价格)
 	private Integer priority;//权重
@@ -41,11 +41,11 @@ public class Product {
 	public void setProductDesc(String productDesc) {
 		this.productDesc = productDesc;
 	}
-	public String getImgArr() {
-		return imgArr;
+	public String getImgAddr() {
+		return imgAddr;
 	}
-	public void setImgArr(String imgArr) {
-		this.imgArr = imgArr;
+	public void setImgAddr(String imgAddr) {
+		this.imgAddr = imgAddr;
 	}
 	public String getNormalPrice() {
 		return normalPrice;

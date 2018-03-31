@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import cn.mark.o2o.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 
@@ -48,11 +49,11 @@ public class ImageUtil {
 	 * @param targetAddr
 	 * @return
 	 */
-	public static String generateThumbnail(InputStream thumbnailInputstream,String fileName,String targetAddr) {
+	public static String generateThumbnail(ImageHolder thumbnail,String targetAddr) {
 		//获取不重复的文件名
 		String realFileName = getRandomFileName();
 		//获取文件的扩展名
-		String extension = getFileExtension(fileName);
+		String extension = getFileExtension(thumbnail.getImageName());
 		// 如果目标路径不存在，则自动创建
 		makeDirPath(targetAddr);
 		// 获取文件存储的相对路径(带文件名)
@@ -63,7 +64,7 @@ public class ImageUtil {
 		logger.debug("current complete addr is:" + PathUtil.getImgBasePath() + relativeAddr);
 		// 调用Thumbnails生成带有水印的图片
 		try {
-			Thumbnails.of(thumbnailInputstream).size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath)), 0.25f).outputQuality(0.8f).toFile(dest);
+			Thumbnails.of(thumbnail.getImage()).size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath)), 0.25f).outputQuality(0.8f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
 			e.printStackTrace();

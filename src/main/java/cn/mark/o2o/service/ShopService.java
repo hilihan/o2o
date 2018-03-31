@@ -1,7 +1,7 @@
 package cn.mark.o2o.service;
 
-import java.io.InputStream;
 
+import cn.mark.o2o.dto.ImageHolder;
 import cn.mark.o2o.dto.ShopExecution;
 import cn.mark.o2o.entity.Shop;
 import cn.mark.o2o.exceptions.ShopOperationException;
@@ -30,7 +30,7 @@ public interface ShopService {
 	 * @param fileName
 	 * @return
 	 */
-	ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream,String fileName) throws ShopOperationException;
+	ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 	
 	/**
 	 * 注册店铺信息，包括图片处理
@@ -40,5 +40,5 @@ public interface ShopService {
 	 * @return
 	 * @throws ShopOperationException
 	 */
-	ShopExecution addShop(Shop shop,InputStream shopImgInputstream,String fileName) throws ShopOperationException;
+	ShopExecution addShop(Shop shop,ImageHolder thumbnail) throws ShopOperationException;
 }

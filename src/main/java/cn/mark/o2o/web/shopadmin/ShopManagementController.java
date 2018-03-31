@@ -19,6 +19,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import cn.mark.o2o.dto.ImageHolder;
 import cn.mark.o2o.dto.ShopExecution;
 import cn.mark.o2o.entity.Area;
 import cn.mark.o2o.entity.PersonInfo;
@@ -146,7 +147,7 @@ public class ShopManagementController {
 			shop.setOwner(owner);
 			ShopExecution result;
 			try {
-				result = shopService.addShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());
+				result = shopService.addShop(shop, new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream()));
 				if(result.getState() == ShopStateEnum.CHECK.getState()) {
 					modelMap.put("success", true);
 					//该用户可以操作的店铺列表
@@ -233,9 +234,9 @@ public class ShopManagementController {
 			ShopExecution result;
 			try {
 				if(shopImg == null) {
-					result = shopService.modifyShop(shop,null,null);					
+					result = shopService.modifyShop(shop,null);					
 				} else {
-					result = shopService.modifyShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());	
+					result = shopService.modifyShop(shop,new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream()));	
 				}
 				if(result.getState() == ShopStateEnum.SUCCESS.getState()) {
 					modelMap.put("success", true);
