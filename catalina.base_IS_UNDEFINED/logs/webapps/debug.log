@@ -1,19 +1,16 @@
-2018-03-31 09:49:23:381 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
-2018-03-31 09:49:23:389 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
-2018-03-31 09:49:23:412 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-2018-03-31 09:49:23:446 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试1(String), 测试Desc1(String), test1(String), null, null, 1(Integer), 2018-03-31 09:49:23.362(Timestamp), 2018-03-31 09:49:23.362(Timestamp), 1(Integer), 32(Long), 41(Long)
-2018-03-31 09:49:23:460 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
-2018-03-31 09:49:23:467 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
-2018-03-31 09:49:23:468 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
-2018-03-31 09:49:23:468 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-2018-03-31 09:49:23:469 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试2(String), 测试Desc2(String), test2(String), null, null, 2(Integer), 2018-03-31 09:49:23.362(Timestamp), 2018-03-31 09:49:23.362(Timestamp), 0(Integer), 32(Long), 41(Long)
-2018-03-31 09:49:23:473 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
-2018-03-31 09:49:23:473 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
-2018-03-31 09:49:23:474 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
-2018-03-31 09:49:23:474 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-2018-03-31 09:49:23:476 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: test3(String), 测试Desc3(String), test3(String), null, null, 3(Integer), 2018-03-31 09:49:23.362(Timestamp), 2018-03-31 09:49:23.362(Timestamp), 1(Integer), 32(Long), 41(Long)
-2018-03-31 09:49:23:480 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
-2018-03-31 09:49:44:392 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductImgDao.batchInsertProductImg] use [master] Strategy,SqlCommanType [SELECT] ..
-2018-03-31 09:49:44:396 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
-2018-03-31 09:49:44:414 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img (img_addr, img_desc, priority, create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
-2018-03-31 09:49:44:445 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-03-31 09:49:44.347(Timestamp), 1(Long), 图片2(String), null, 1(Integer), 2018-03-31 09:49:44.347(Timestamp), 1(Long)
+2018-04-03 16:49:28:804 [main] DEBUG cn.mark.o2o.util.ImageUtil - current relativeAddr is:upload/item/shop/41/2018040316492883673.jpg
+2018-04-03 16:49:28:832 [main] DEBUG cn.mark.o2o.util.ImageUtil - current complete addr is:/Users/mark/Downloads/o2o_dev_img/upload/item/shop/41/2018040316492883673.jpg
+2018-04-03 16:49:29:588 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-04-03 16:49:29:590 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-04-03 16:49:29:606 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-04-03 16:49:29:702 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 嫩牛五方翅桶(String), 辣翅6块+烤翅4块+面包升级香辣鸡腿堡1个+川辣嫩牛五方1个+九珍2杯(String), upload/item/shop/41/2018040316492883673.jpg(String), null, null, 10(Integer), 2018-04-03 16:49:28.791(Timestamp), 2018-04-03 16:49:28.791(Timestamp), 1(Integer), 32(Long), 41(Long)
+2018-04-03 16:49:29:705 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-04-03 16:49:29:719 [main] DEBUG cn.mark.o2o.util.ImageUtil - current relative addr is :upload/item/shop/41/2018040316492982245.jpeg
+2018-04-03 16:49:29:719 [main] DEBUG cn.mark.o2o.util.ImageUtil - current complete addr is :/Users/mark/Downloads/o2o_dev_img/upload/item/shop/41/2018040316492982245.jpeg
+2018-04-03 16:49:29:755 [main] DEBUG cn.mark.o2o.util.ImageUtil - current relative addr is :upload/item/shop/41/2018040316492985705.jpeg
+2018-04-03 16:49:29:756 [main] DEBUG cn.mark.o2o.util.ImageUtil - current complete addr is :/Users/mark/Downloads/o2o_dev_img/upload/item/shop/41/2018040316492985705.jpeg
+2018-04-03 16:49:29:800 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductImgDao.batchInsertProductImg] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-04-03 16:49:29:801 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-04-03 16:49:29:820 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img (img_addr, img_desc, priority, create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-04-03 16:49:29:822 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: upload/item/shop/41/2018040316492982245.jpeg(String), null, null, 2018-04-03 16:49:29.755(Timestamp), 4(Long), upload/item/shop/41/2018040316492985705.jpeg(String), null, null, 2018-04-03 16:49:29.8(Timestamp), 4(Long)
+2018-04-03 16:49:29:822 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
