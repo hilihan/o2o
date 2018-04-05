@@ -4,6 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * 主要用来解析路由并转发到相应的html中
+ * @author mark
+ *
+ */
 @Controller
 @RequestMapping(value="shopadmin",method=RequestMethod.GET)
 public class ShopAdminController {
@@ -29,5 +34,11 @@ public class ShopAdminController {
 	private String productCategoryManage() {
 		// 转发至商品类别管理页面
 		return "shop/productcategorymanagement";
+	}
+	
+	@RequestMapping(value = "/productoperation", method = RequestMethod.GET)
+	private String productOperation() {
+		// 转发至商品添加/编辑页面
+		return "shop/productoperation";
 	}
 }
