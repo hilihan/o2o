@@ -41,4 +41,10 @@ public class ShopAdminController {
 		// 转发至商品添加/编辑页面
 		return "shop/productoperation";
 	}
+	
+	@RequestMapping(value = "/productmanagement", method = RequestMethod.GET)
+	private String productManagement() {
+		// 转发至商品添加/编辑页面
+		return "shop/productmanagement";
+	}
 }
