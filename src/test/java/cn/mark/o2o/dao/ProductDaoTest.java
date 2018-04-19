@@ -135,13 +135,13 @@ public class ProductDaoTest extends BaseTest {
 		assertEquals(1, effectedNum);
 	}
 
-//	@Test
-//	public void testEUpdateProductCategoryToNull() {
-//		// 将productCategoryId为2的商品类别下面的商品的商品类别置为空
-//		int effectedNum = productDao.updateProductCategoryToNull(2L);
-//		assertEquals(1, effectedNum);
-//	}
-//
+	@Test
+	public void testEUpdateProductCategoryToNull() {
+		// 将productCategoryId为51的商品类别下面的商品的商品类别置为空
+		int effectedNum = productDao.updateProductCategoryToNull(51L);
+		assertEquals(1, effectedNum);
+	}
+
 //	@Test
 //	@Ignore
 //	public void testFDeleteShopAuthMap() throws Exception {
