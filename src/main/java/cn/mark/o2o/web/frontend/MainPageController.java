@@ -54,5 +54,4 @@ public class MainPageController {
 		modelMap.put("success", true);
 		return modelMap;
 	}
-	
 }
