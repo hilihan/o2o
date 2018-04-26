@@ -118,6 +118,7 @@ public class ShopServiceimpl implements ShopService {
 		} else {
 			se.setState(ShopStateEnum.INNER_ERROR.getState());
 		}
+		
 		return se;
 	}
 
