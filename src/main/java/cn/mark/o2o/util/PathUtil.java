@@ -17,7 +17,10 @@ public class PathUtil {
 		if(os.toLowerCase().startsWith("win")) {
 			basePath = "D:/projectdev/image";
 		} else {
+			//mac测试环境
 			basePath = "/Users/mark/Downloads/o2o_dev_img";
+			//部署切换
+			//basePath = "/home/mark/o2o_dev_img";
 		}
 		basePath = basePath.replace("/", seperator);
 		
