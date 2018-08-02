@@ -1,5 +1,135 @@
-2018-07-27 12:03:28:981 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.AreaDao.queryArea] use [master] Strategy,SqlCommanType [SELECT] ..
-2018-07-27 12:03:28:994 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
-2018-07-27 12:03:29:006 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2018-07-27 12:03:29:061 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==> Parameters: 
-2018-07-27 12:03:29:124 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - <==      Total: 4
+2018-08-01 13:54:18:614 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.AreaDao.queryArea] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:18:621 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:18:633 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-08-01 13:54:18:785 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2018-08-01 13:54:18:821 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - <==      Total: 4
+2018-08-01 13:54:18:853 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.updateShop] use [master] Strategy,SqlCommanType [UPDATE] ..
+2018-08-01 13:54:18:856 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:18:881 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-08-01 13:54:18:887 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), test(String), test(String), 2018-08-01 13:54:18.853(Timestamp), 1(Integer), 审核中(String), 2(Integer), 36(Long), 36(Long)
+2018-08-01 13:54:18:915 [main] DEBUG cn.mark.o2o.dao.ShopDao.updateShop - <==    Updates: 0
+2018-08-01 13:54:18:933 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:18:934 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:18:935 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category WHERE parent_id = ?) AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-08-01 13:54:18:936 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 36(Long), 0(Integer), 10(Integer)
+2018-08-01 13:54:18:961 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 3
+2018-08-01 13:54:18:963 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:18:963 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:18:964 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category WHERE parent_id = ?) AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2018-08-01 13:54:18:965 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 36(Long)
+2018-08-01 13:54:18:976 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-01 13:54:18:978 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.insertShop] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:18:978 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:18:978 [main] DEBUG cn.mark.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
+2018-08-01 13:54:18:979 [main] DEBUG cn.mark.o2o.dao.ShopDao.insertShop - ==> Parameters: 9(Long), 2(Integer), 36(Long), 测试的店铺(String), test(String), test(String), test(String), test(String), null, 2018-08-01 13:54:18.977(Timestamp), null, 1(Integer), 审核中(String)
+2018-08-01 13:54:19:005 [main] DEBUG cn.mark.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-08-01 13:54:19:007 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryByShopId] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:007 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:008 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2018-08-01 13:54:19:008 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 36(Long)
+2018-08-01 13:54:19:022 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryByShopId - <==      Total: 0
+2018-08-01 13:54:19:048 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.HeadLineDao.queryHeadLine] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:051 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:051 [main] DEBUG cn.mark.o2o.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2018-08-01 13:54:19:052 [main] DEBUG cn.mark.o2o.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
+2018-08-01 13:54:19:069 [main] DEBUG cn.mark.o2o.dao.HeadLineDao.queryHeadLine - <==      Total: 5
+2018-08-01 13:54:19:094 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:094 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:095 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority ASC 
+2018-08-01 13:54:19:095 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-01 13:54:19:112 [main] DEBUG cn.mark.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 10
+2018-08-01 13:54:19:129 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.batchInsertProductCategory] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:130 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:132 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category ( product_category_name, priority, create_time, shop_id ) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-08-01 13:54:19:133 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2018-08-01 13:54:19.128(Timestamp), 41(Long), 商品类别2(String), 2(Integer), 2018-08-01 13:54:19.128(Timestamp), 41(Long)
+2018-08-01 13:54:19:155 [main] DEBUG c.m.o.d.P.batchInsertProductCategory - <==    Updates: 2
+2018-08-01 13:54:19:158 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.queryProductCategoryList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:158 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:158 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
+2018-08-01 13:54:19:159 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==> Parameters: 41(Long)
+2018-08-01 13:54:19:172 [main] DEBUG c.m.o.d.P.queryProductCategoryList - <==      Total: 13
+2018-08-01 13:54:19:174 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.queryProductCategoryList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:174 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:174 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
+2018-08-01 13:54:19:175 [main] DEBUG c.m.o.d.P.queryProductCategoryList - ==> Parameters: 41(Long)
+2018-08-01 13:54:19:189 [main] DEBUG c.m.o.d.P.queryProductCategoryList - <==      Total: 13
+2018-08-01 13:54:19:190 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.deleteProductCategory] use [master] Strategy,SqlCommanType [DELETE] ..
+2018-08-01 13:54:19:191 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:191 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2018-08-01 13:54:19:191 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 58(Long), 41(Long)
+2018-08-01 13:54:19:215 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-08-01 13:54:19:216 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductCategoryDao.deleteProductCategory] use [master] Strategy,SqlCommanType [DELETE] ..
+2018-08-01 13:54:19:216 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:219 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2018-08-01 13:54:19:220 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 57(Long), 41(Long)
+2018-08-01 13:54:19:245 [main] DEBUG c.m.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-08-01 13:54:19:256 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:256 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:257 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-08-01 13:54:19:259 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试1(String), 测试Desc1(String), test1(String), null, null, 1(Integer), 2018-08-01 13:54:19.256(Timestamp), 2018-08-01 13:54:19.256(Timestamp), 1(Integer), 32(Long), 41(Long)
+2018-08-01 13:54:19:287 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-01 13:54:19:287 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:288 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:288 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-08-01 13:54:19:289 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试2(String), 测试Desc2(String), test2(String), null, null, 2(Integer), 2018-08-01 13:54:19.256(Timestamp), 2018-08-01 13:54:19.256(Timestamp), 0(Integer), 32(Long), 41(Long)
+2018-08-01 13:54:19:316 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-01 13:54:19:316 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.insertProduct] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:317 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:317 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-08-01 13:54:19:319 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - ==> Parameters: test3(String), 测试Desc3(String), test3(String), null, null, 3(Integer), 2018-08-01 13:54:19.256(Timestamp), 2018-08-01 13:54:19.256(Timestamp), 1(Integer), 32(Long), 41(Long)
+2018-08-01 13:54:19:344 [main] DEBUG cn.mark.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-08-01 13:54:19:347 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.queryProductList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:347 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:348 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2018-08-01 13:54:19:349 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-08-01 13:54:19:363 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductList - <==      Total: 3
+2018-08-01 13:54:19:365 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.queryProductCount] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:366 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:367 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2018-08-01 13:54:19:367 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-08-01 13:54:19:381 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-08-01 13:54:19:383 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductImgDao.batchInsertProductImg] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:383 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:384 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img (img_addr, img_desc, priority, create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-08-01 13:54:19:385 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-08-01 13:54:19.383(Timestamp), 1(Long), 图片2(String), null, 1(Integer), 2018-08-01 13:54:19.383(Timestamp), 1(Long)
+2018-08-01 13:54:19:411 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-08-01 13:54:19:413 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.queryProductById] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:413 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:19:414 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-08-01 13:54:19:415 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2018-08-01 13:54:19:438 [main] DEBUG cn.mark.o2o.dao.ProductDao.queryProductById - <==      Total: 4
+2018-08-01 13:54:19:441 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.updateProduct] use [master] Strategy,SqlCommanType [UPDATE] ..
+2018-08-01 13:54:19:441 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:443 [main] DEBUG cn.mark.o2o.dao.ProductDao.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, product_category_id=? WHERE product_id = ? AND shop_id=? 
+2018-08-01 13:54:19:444 [main] DEBUG cn.mark.o2o.dao.ProductDao.updateProduct - ==> Parameters: 第二个产品(String), 33(Long), 1(Long), 41(Long)
+2018-08-01 13:54:19:471 [main] DEBUG cn.mark.o2o.dao.ProductDao.updateProduct - <==    Updates: 1
+2018-08-01 13:54:19:473 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductDao.updateProductCategoryToNull] use [master] Strategy,SqlCommanType [UPDATE] ..
+2018-08-01 13:54:19:473 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:473 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: update tb_product set product_category_id = null where product_category_id = ? 
+2018-08-01 13:54:19:474 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 51(Long)
+2018-08-01 13:54:19:505 [main] DEBUG c.m.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 0
+2018-08-01 13:54:19:525 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductImgDao.batchInsertProductImg] use [master] Strategy,SqlCommanType [INSERT] ..
+2018-08-01 13:54:19:525 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:526 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img (img_addr, img_desc, priority, create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-08-01 13:54:19:528 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-08-01 13:54:19.525(Timestamp), 1(Long), 图片2(String), null, 1(Integer), 2018-08-01 13:54:19.525(Timestamp), 1(Long)
+2018-08-01 13:54:19:553 [main] DEBUG c.mark.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-08-01 13:54:19:558 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ProductImgDao.deleteProductImgByProductId] use [master] Strategy,SqlCommanType [DELETE] ..
+2018-08-01 13:54:19:558 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:559 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id = ? 
+2018-08-01 13:54:19:560 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 1(Long)
+2018-08-01 13:54:19:588 [main] DEBUG c.m.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 6
+2018-08-01 13:54:19:833 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.AreaDao.queryArea] use [master] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:19:833 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：master
+2018-08-01 13:54:19:834 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-08-01 13:54:19:850 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2018-08-01 13:54:19:870 [main] DEBUG cn.mark.o2o.dao.AreaDao.queryArea - <==      Total: 4
+2018-08-01 13:54:21:953 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopList] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:21:954 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:21:955 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-08-01 13:54:21:958 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - ==> Parameters: 36(Long), 9(Long), 3(Integer), 3(Integer)
+2018-08-01 13:54:21:970 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopList - <==      Total: 0
+2018-08-01 13:54:21:975 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceInterceptor - 设置方法[cn.mark.o2o.dao.ShopDao.queryShopCount] use [slave] Strategy,SqlCommanType [SELECT] ..
+2018-08-01 13:54:21:975 [main] DEBUG cn.mark.o2o.dao.split.DynamicDataSourceHolder - 所使用的数据源为：slave
+2018-08-01 13:54:21:976 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2018-08-01 13:54:21:977 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 36(Long), 9(Long)
+2018-08-01 13:54:21:989 [main] DEBUG cn.mark.o2o.dao.ShopDao.queryShopCount - <==      Total: 1

@@ -15,6 +15,7 @@ public class Product {
 	private String normalPrice;//原价
 	private String promotionPrice;//现价(推广价格)
 	private Integer priority;//权重
+	private Integer point;//商品积分
 	private Date createTime;//创建时间
 	private Date lastEditTime;//最近的一次更新时间
 	private Integer enableStatus;//-1.不可用 0.下架 1.在前端展示系统展示
@@ -46,6 +47,12 @@ public class Product {
 	}
 	public void setImgAddr(String imgAddr) {
 		this.imgAddr = imgAddr;
+	}
+	public Integer getPoint() {
+		return point;
+	}
+	public void setPoint(Integer point) {
+		this.point = point;
 	}
 	public String getNormalPrice() {
 		return normalPrice;

@@ -16,9 +16,10 @@ $(function() {
 			// 商品更新时间
 			$('#product-time').text(
 					new Date(product.lastEditTime).Format("yyyy-MM-dd"));
-			// if (product.point != undefined) {
-			// $('#product-point').text('购买可得' + product.point + '积分');
-			// }
+			// 商品积分展示
+			 if (product.point != undefined) {
+				 $('#product-point').text('购买可得' + product.point + '积分');
+			 }
 			// 商品名称
 			$('#product-name').text(product.productName);
 			// 商品简介

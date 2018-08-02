@@ -72,4 +72,12 @@ public class PersonInfo{
 		this.userType = userType;
 	}
 	
+	@Override
+	public String toString() {
+		return "PersonInfo [userId=" + userId + ", name=" + name + ", profileImg=" + profileImg + ", email=" + email
+				+ ", gender=" + gender + ", enableStatus=" + enableStatus + ", userType=" + userType + ", createTime="
+				+ createTime + ", lastEditTime=" + lastEditTime + "]";
+	}
+	
+	
 }

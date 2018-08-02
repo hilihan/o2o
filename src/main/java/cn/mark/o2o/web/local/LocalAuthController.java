@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +21,15 @@ import cn.mark.o2o.exceptions.LocalAuthOperationException;
 import cn.mark.o2o.service.LocalAuthService;
 import cn.mark.o2o.util.CodeUtil;
 import cn.mark.o2o.util.HttpServletRequestUtil;
+import cn.mark.o2o.web.wechat.WechatLoginController;
 
 @Controller
 @RequestMapping(value = "local", method = { RequestMethod.GET, RequestMethod.POST })
 public class LocalAuthController {
 	@Autowired
 	private LocalAuthService localAuthService;
+	
+	private static Logger log = LoggerFactory.getLogger(LocalAuthController.class);
 
 	@RequestMapping(value = "/bindlocalauth", method = RequestMethod.POST)
 	@ResponseBody
@@ -48,6 +53,7 @@ public class LocalAuthController {
 		String password = HttpServletRequestUtil.getString(request, "password");
 		// 从session中获取当前用户信息(用户一旦通过微信登录之后，便能获取到用户的信息)
 		PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
+		log.error("LocalAuthController -> user" + user );
 		// 非空判断，要求帐号密码以及当前的用户session非空
 		if (userName != null && password != null && user != null && user.getUserId() != null) {
 			// 创建LocalAuth对象并赋值
