@@ -41,6 +41,8 @@
 		<!-- 校验是否已登录了店家管理系统的拦截器 -->
 		<mvc:interceptor>
 			<mvc:mapping path="/shopadmin/**" />
+			<!--  shopauthmanagement page -->
+			<mvc:exclude-mapping path="/shopadmin/addshopauthmap"/>
 			<bean id="ShopInterceptor"
 				class="cn.mark.o2o.interceptor.shopadmin.ShopLoginInterceptor" />
 		</mvc:interceptor>
@@ -57,6 +59,8 @@
 			<!-- shopmanage page -->
 			<mvc:exclude-mapping path="/shopadmin/shopmanagement" />
 			<mvc:exclude-mapping path="/shopadmin/getshopmanagementinfo" />
+			<!--  shopauthmanagement page -->
+			<mvc:exclude-mapping path="/shopadmin/addshopauthmap"/>
 			<bean id="ShopPermissionInterceptor"
 				class="cn.mark.o2o.interceptor.shopadmin.ShopPermissionInterceptor" />
 		</mvc:interceptor>
