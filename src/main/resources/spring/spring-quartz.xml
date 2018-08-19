@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="jobDetailFacotry"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="cn.mark.o2o.service.quartz.ProductSellDailyJob" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="ProductSellDailyService" value-ref="productSellDailyServiceImpl" />
+			</map>
+		</property>
+		<property name="Durability" value="true" />
+	</bean>
+	
+	<!-- 每隔5秒钟执行一次 -->
+	<bean id="myCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <property name="jobDetail"  ref="jobDetailFacotry"/>
+	    <property name="cronExpression"  value="0 0 0 * * ? *"/>
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="jobDetails">
+	        <list>
+	            <ref bean="jobDetailFacotry"/>
+	        </list>
+	    </property>
+	    <property name="triggers">
+	        <list>
+	            <ref bean="myCronTrigger"/>
+	        </list>
+	    </property>
+	</bean>
+
+</beans>
